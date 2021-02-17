@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans', 'Arial', sans-serif;
+}
+
+.page-main {
+  margin: 0 15px;
+}
+
+.button {
+  cursor: pointer;
+  -webkit-box-shadow: 5px 5px 10px #808080;
+          box-shadow: 5px 5px 10px #808080;
+}
+
+.navigation {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.navigation__create-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  background: url(../img/pencil.svg);
+  background-color: #ddd;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navigation__create-button:hover {
+  background-color: #ffffff;
+}
+
+.navigation__create-button:active {
+  border: 1px solid #808080;
+  background-color: #ffffff;
+}
+
+.notes-field {
+  background-color: #f0f0f0;
+  padding: 15px;
+  min-height: 80vh;
+  border-radius: 0.3%;
+  margin: 15px 0;
+}
+
+.note {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 15px;
+  background-color: #ffdcb4;
+  padding: 15px;
+  padding-top: 40px;
+  position: relative;
+  -webkit-box-shadow: 3px 5px 10px #8a8a8a;
+          box-shadow: 3px 5px 10px #8a8a8a;
+}
+
+.note__title {
+  border: none;
+  border-radius: 2%;
+  outline: none;
+  font-size: 1.5rem;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.note__title:hover, .note__title:focus {
+  background: #ffc896;
+}
+
+.note__text {
+  font-size: 1.2rem;
+  font-family: 'Noto Sans', 'Arial', sans-serif;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 620px;
+  max-height: 620px;
+  padding: 10px;
+  background: #ffdcb4;
+  border: none;
+  border-radius: 2%;
+  outline: none;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.note__text:hover, .note__text:focus {
+  background: #ffdc96;
+}
+
+.note__close-button {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../img/delete.svg);
+  background-size: 100%;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.page-footer {
+  padding: 15px;
+  margin: 0 auto;
+  height: 84px;
+  background-color: #c2c2c2;
+  -webkit-box-shadow: 0 1px 10px #2e2e2e;
+          box-shadow: 0 1px 10px #2e2e2e;
+}
+
+.page-footer__info {
+  text-align: center;
+  color: #2e2e2e;
+}
+/*# sourceMappingURL=index.css.map */
