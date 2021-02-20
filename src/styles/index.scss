@@ -18,6 +18,7 @@
     width: 100%;
     // height: 100px;
     margin: 15px 0;
+    // padding: 2px;
     &__create-button{
         width: 60px;
         height: 60px;
@@ -30,6 +31,7 @@
         background-size: 60%;
         background-repeat: no-repeat;
         background-position: center;
+        border: 1px solid #ddd;
         
         &:hover{
             background-color: #ffffff;
@@ -106,9 +108,13 @@
 }
 
 .page-footer{
+    position: sticky;
+    left: 0;
+    bottom: 0;
     padding: 15px;
     margin: 0 auto;
     height: 84px;
+    width: 100%;
     background-color: #c2c2c2;
     box-shadow: 0 1px 10px #2e2e2e;
 

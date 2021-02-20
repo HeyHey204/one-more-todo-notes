@@ -34,6 +34,7 @@
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
+  border: 1px solid #ddd;
 }
 
 .navigation__create-button:hover {
@@ -115,9 +116,14 @@
 }
 
 .page-footer {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  bottom: 0;
   padding: 15px;
   margin: 0 auto;
   height: 84px;
+  width: 100%;
   background-color: #c2c2c2;
   -webkit-box-shadow: 0 1px 10px #2e2e2e;
           box-shadow: 0 1px 10px #2e2e2e;
