@@ -1,7 +1,11 @@
 class Note {
-    constructor(pageMain, title = 'Node title', noteText = '', cols = 30, rows = 10) {
+    constructor(mainpage, title, noteText, cols = 30, rows = 10, id) {
+        // let update = setInterval(mainpage.updateLS, 1000);
+        // console.log(update);
+        this.id = id;
+
         this.note = createAndAppendChild({
-            parent: pageMain,
+            parent: mainpage.notesField,
             className: 'note'
         })
         this.noteWrapper = createAndAppendChild({
@@ -32,7 +36,8 @@ class Note {
             tag: 'button'
         })
         this.closeButton.addEventListener('click', () => {
-            this.note.remove();
+            console.log(mainpage.notesArray);
+            mainpage.removeNote(this, mainpage)
         })
     }
 };

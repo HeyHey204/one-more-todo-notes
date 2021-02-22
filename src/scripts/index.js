@@ -8,8 +8,10 @@ function createAndAppendChild({ parent, className, tag = 'div' }) {
 let notesPage = new NotesPage();
 
 notesPage.navigation.createButton.addEventListener('click', () => {
-    notesPage.createNote();
+    console.log(notesPage.notesArray);
+    notesPage.createNote(notesPage, 'New note', '');
 })
 
+setInterval(notesPage.updateLS, 1111, notesPage)
 
 
