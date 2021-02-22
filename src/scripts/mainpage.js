@@ -1,6 +1,6 @@
 class NotesPage {
     constructor() {
-        let count = 0;
+        this.count = 0;
         this.notesArray = [];
 
         this.pageMain = createAndAppendChild({
@@ -48,14 +48,11 @@ class NotesPage {
     }
 
     createNote(mainpage, title, noteText, cols, rows) {
-        let note = new Note(mainpage, title, noteText, cols, rows, mainpage.notesArray.length);
-        if (!note.id) {
-            // note.id = mainpage.count;
-            // mainpage.count++;
-        }
+        let note = new Note(mainpage, title, noteText, cols, rows, mainpage.count);
+
         this.notesArray.push(note);
         console.log(note);
-        console.log(mainpage.notesArray.length);
+        console.log(mainpage.count);
         return note;
     }
 
