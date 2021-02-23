@@ -1,15 +1,13 @@
 class Note {
-    constructor(mainpage, title, noteText, cols = 30, rows = 10, id) {
-        // let update = setInterval(mainpage.updateLS, 1000);
-        // console.log(update);
+    constructor(mainpage, title, text, id) {
         this.id = id;
 
-        this.note = createAndAppendChild({
+        this.noteElement = createAndAppendChild({
             parent: mainpage.notesField,
             className: 'note'
         })
         this.noteWrapper = createAndAppendChild({
-            parent: this.note,
+            parent: this.noteElement,
             className: 'note__wrapper'
         })
         this.title = createAndAppendChild({
@@ -20,23 +18,20 @@ class Note {
         this.title.contentEditable = true;
         this.title.textContent = title;
 
-        this.noteText = createAndAppendChild({
+        this.text = createAndAppendChild({
             parent: this.noteWrapper,
             className: 'note__text',
             tag: 'textarea'
         })
-        this.noteText.placeholder = 'Something to do..';
-        this.noteText.textContent = noteText;
-        this.noteText.cols = cols;
-        this.noteText.rows = rows;
+        this.text.placeholder = 'Something to do..';
+        this.text.textContent = text;
 
         this.closeButton = createAndAppendChild({
-            parent: this.note,
+            parent: this.noteElement,
             className: 'note__close-button button',
             tag: 'button'
         })
         this.closeButton.addEventListener('click', () => {
-            console.log(mainpage.notesArray);
             mainpage.removeNote(this, mainpage)
         })
     }

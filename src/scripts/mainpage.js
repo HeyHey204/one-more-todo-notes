@@ -1,4 +1,4 @@
-class NotesPage {
+class MainPage {
     constructor() {
         this.count = 0;
         this.notesArray = [];
@@ -40,46 +40,40 @@ class NotesPage {
         let notes = JSON.parse(localStorage.getItem('notes'));
         if (notes) {
             notes.id.forEach((id) => {
-                // let title = JSON.parse(localStorage.getItem('title'));
-                // console.log(notes.title[id]);
-                this.createNote(this, notes.title[id], notes.noteText[id]);
+                this.createNote(this, notes.title[id], notes.text[id]);
             })
         }
     }
 
-    createNote(mainpage, title, noteText, cols, rows) {
-        let note = new Note(mainpage, title, noteText, cols, rows, mainpage.count);
-
+    createNote(mainPage, title, text) {
+        let note = new Note(mainPage, title, text, mainPage.notesArray.length); //array length as id lol 
         this.notesArray.push(note);
-        console.log(note);
-        console.log(mainpage.count);
         return note;
+
     }
 
-    removeNote(note, mainpage) {
-        // this.notesArray[note.id].pop();
-        console.log(mainpage.notesArray);
-        console.log(note);
-        note.note.remove();
-        mainpage.notesArray.splice(note.id, 1);
-        delete note.id;
-        console.log(mainpage.notesArray);
-        console.log(note);
+    removeNote(note, mainPage) {
+        mainPage.notesArray.forEach(item => {
+            item.id = mainPage.notesArray.indexOf(item);
+        })
+        note.noteElement.remove();
+        mainPage.notesArray.splice(note.id, 1);
     }
 
-    updateLS(mainpage) {
-        let notesArray = mainpage.notesArray;
-        let idArr = [];
-        let titleArr = [];
-        let noteTextArr = [];
-        let count = 0;
+    updateLS(mainPage) {
+        let notesArray = mainPage.notesArray;
+        let idsArr = [];
+        let titlesArr = [];
+        let textsArr = [];
+        mainPage.count = 0;
         if (notesArray) {
             notesArray.forEach(note => {
-                idArr.push(count++);
-                titleArr.push(note.title.textContent.toString());
-                noteTextArr.push(note.noteText.value.toString());
+                idsArr.push(mainPage.count++);
+                note.id = mainPage.count;
+                titlesArr.push(note.title.textContent.toString());
+                textsArr.push(note.text.value.toString());
             })
-            localStorage.setItem('notes', JSON.stringify({ id: idArr, title: titleArr, noteText: noteTextArr }));
+            localStorage.setItem('notes', JSON.stringify({ id: idsArr, title: titlesArr, text: textsArr }));
         }
     }
 

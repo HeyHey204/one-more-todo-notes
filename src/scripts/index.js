@@ -5,13 +5,12 @@ function createAndAppendChild({ parent, className, tag = 'div' }) {
     return childEl;
 }
 
-let notesPage = new NotesPage();
+let mainPage = new MainPage();
 
-notesPage.navigation.createButton.addEventListener('click', () => {
-    console.log(notesPage.notesArray);
-    notesPage.createNote(notesPage, 'New note', '');
+mainPage.navigation.createButton.addEventListener('click', () => {
+    mainPage.createNote(mainPage, 'New note', '');
 })
 
-setInterval(notesPage.updateLS, 1111, notesPage)
+setInterval(mainPage.updateLS, 10, mainPage)
 
 
