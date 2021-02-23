@@ -5,6 +5,7 @@
     font-family: 'Noto Sans', 'Arial', sans-serif;
 }
 
+
 .page-main{
     margin: 0 15px;
 }
@@ -16,9 +17,7 @@
 
 .navigation{
     width: 100%;
-    // height: 100px;
     margin: 15px 0;
-    // padding: 2px;
     &__create-button{
         width: 60px;
         height: 60px;
@@ -124,3 +123,36 @@
     }
 }
 
+@media only screen and (max-width: 600px){
+    .navigation{
+        padding-top: 20px;
+        &__create-button{
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            z-index: 10;
+        }
+    }
+    .notes-field{
+        display: grid;
+        grid-auto-rows: min-content;
+
+    }
+    .note{
+        &__title{
+            padding: 10px;
+        }
+        &__text{
+            max-width: 60vw;
+        }
+    }
+
+    .page-footer{
+        position: initial;
+        height: 80px;
+        &__info{
+            text-align: left;
+            width: 70%;
+        }
+    }
+}

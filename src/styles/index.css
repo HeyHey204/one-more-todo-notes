@@ -133,4 +133,36 @@
   text-align: center;
   color: #2e2e2e;
 }
+
+@media only screen and (max-width: 600px) {
+  .navigation {
+    padding-top: 20px;
+  }
+  .navigation__create-button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+  }
+  .notes-field {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-rows: -webkit-min-content;
+    grid-auto-rows: min-content;
+  }
+  .note__title {
+    padding: 10px;
+  }
+  .note__text {
+    max-width: 60vw;
+  }
+  .page-footer {
+    position: initial;
+    height: 80px;
+  }
+  .page-footer__info {
+    text-align: left;
+    width: 70%;
+  }
+}
 /*# sourceMappingURL=index.css.map */
